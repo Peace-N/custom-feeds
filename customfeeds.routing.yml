@@ -1,0 +1,37 @@
+#########Admin Routing########
+#Custom Feeds Configuration
+customfeeds.admin_config:
+  path: '/admin/config/customfeeds-settings'
+  defaults:
+    _title: 'Custom Feeds Settings'
+    _form: 'Drupal\customfeeds\Form\CustomFeedsSettingsForm'
+  requirements:
+    _permission: 'access content'
+
+#Admin Custom Feeds Listing
+customfeeds.admin:
+  path: '/admin/content/customfeeds'
+  defaults:
+    _controller: 'Drupal\customfeeds\Controller\FeedListItemController:listItems'
+    _title: 'Custom Feed items'
+  requirements:
+    _permission: 'access content'
+
+customfeeds.listing:
+  path: '/customfeeds'
+  defaults:
+    _controller: 'Drupal\customfeeds\Controller\FeedListItemController:view'
+    _title: 'Custom Feed items'
+  requirements:
+    _permission: 'access content'
+
+#customfeeds.listing:
+#  path: '/feed/{feeds_feed}/custom-feeds-list'
+#  defaults:
+#    _controller: 'Drupal\customfeeds\Controller\FeedListItemController:listItems'
+#    _title: 'Custom Feed items'
+#  requirements:
+#    _entity_access: 'feeds_feed.view'
+#    _permission: 'access content'
+#    feeds_feed: \d+
+#    feeds_feed: \d+

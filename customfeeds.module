@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ * Custom Feeds Hook Implementations
+ */
+
+/**
+ * Implements hook_theme()
+ * @return array
+ */
+function customfeeds_theme() {
+  return [
+    'customfeeds_feed' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+    ],
+  ];
+}

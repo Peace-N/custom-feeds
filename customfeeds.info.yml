@@ -1,0 +1,6 @@
+name: Custom Feeds
+description: 'Custom Feeds Aggregates RSS/Atom/RDF feeds and implements monitoring'
+package: Custom Feeds
+type: module
+core_version_requirement: ^9.3 || ^10
+configure: entity.feeds_feed_type.collection

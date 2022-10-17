@@ -1,0 +1,4 @@
+services:
+  customfeeds.fetcher:
+    class: Drupal\customfeeds\Fetcher\CustomFeedsFetcher
+    arguments: ['@http_client']
