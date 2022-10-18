@@ -50,7 +50,8 @@ class FeedListItemController extends ControllerBase
     /** @var CustomFeedsFetcher $fetchResults */
     $fetchResults = \Drupal::service('customfeeds.fetcher');
     $customFeedsList = $fetchResults->fetch();
-    var_dump($customFeedsList);
+    header('Content-Type: application/xml');
+    var_dump(simplexml_load_string($customFeedsList));
     return $build;
   }
 

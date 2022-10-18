@@ -1,6 +1,10 @@
 name: Custom Feeds
-description: 'Custom Feeds Aggregates RSS/Atom/RDF feeds and implements monitoring'
+description: 'Custom Feeds Import Items using Migrate UI'
 package: Custom Feeds
 type: module
 core_version_requirement: ^9.3 || ^10
 configure: entity.feeds_feed_type.collection
+dependencies:
+  - drupal:migrate (>=8.3)
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools

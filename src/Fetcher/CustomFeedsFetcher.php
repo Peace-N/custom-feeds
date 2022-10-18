@@ -48,9 +48,9 @@ class CustomFeedsFetcher implements CustomFeedsFetchInterface
     $options = [RequestOptions::SINK => "sink"];
     $this->options = $options;
     $this->client = $client;
-    if (isset($this->client->getConfig('headers')['User-Agent'])) {
-      $options[RequestOptions::HEADERS]['User-Agent'] = $this->client->getConfig('headers')['User-Agent'];
-    }
+//    if (isset($this->client->getConfig('headers')['User-Agent'])) {
+//      $options[RequestOptions::HEADERS]['User-Agent'] = $this->client->getConfig('headers')['User-Agent'];
+//    }
   }
 
   /**

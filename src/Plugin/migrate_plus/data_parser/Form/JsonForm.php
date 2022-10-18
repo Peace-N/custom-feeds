@@ -1,0 +1,48 @@
+<?php
+
+namespace Drupal\customfeeds\Plugin\migrate_plus\data_parser\Form;
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * The configuration form for the json migrate data parser plugin.
+ *
+ * @MigrateForm(
+ *   id = "json_form",
+ *   title = @Translation("Json Data Parser Plugin Form"),
+ *   form_type = "configuration",
+ *   parent_id = "json",
+ *   parent_type = "data_parser"
+ * )
+ */
+class JsonForm extends DataParserFormPluginBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $source = $this->migration->getSourceConfiguration();
+
+    $form['item_selector'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('JSON Item Selector'),
+      '#description' => $this->t('Enter items context, for example "@example".', [
+        '@example' => '$.items.*',
+      ]),
+      // @todo move this to defaultConfiguration
+      '#default_value' => $source['item_selector'] ?: '',
+      '#required' => TRUE,
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function copyFormValuesToEntity(EntityInterface $entity, array $form, FormStateInterface $form_state) {
+    $entity->source['item_selector'] = $form_state->getValue('item_selector');
+  }
+
+}

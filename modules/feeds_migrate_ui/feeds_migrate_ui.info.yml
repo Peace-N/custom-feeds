@@ -1,0 +1,13 @@
+name: 'Custom Feeds Migrate UI Extended'
+description: 'UI for feeds migrate configuration.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: module
+package: 'Migration'
+dependencies:
+  - customfeeds
+
+# Information added by Drupal.org packaging script on 2021-04-08
+version: '8.x-1.x-dev'
+project: 'feeds_migrate'
+datestamp: 1617887230

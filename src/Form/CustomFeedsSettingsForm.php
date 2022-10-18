@@ -30,7 +30,7 @@ class CustomFeedsSettingsForm extends FormBase
   public function buildForm(array $form, FormStateInterface $form_state): array
   {
     $form = [];
-    $collection = \Drupal::state()->get(CustomFeedsInterface::CUSTOM_FEEDS_CONFIG_VALUES);
+    $collection = \Drupal::state()->get(CustomFeedsInterface::CUSTOM_FEEDS_CONFIG_VALUES);//todo//getter state
     $form[CustomFeedsInterface::ADMIN_SETTINGS_RSS_ATOM_FEED_NAME] = [
       '#type' => 'textfield',
       '#title' => $this->t('RSS FEED NAME'),
