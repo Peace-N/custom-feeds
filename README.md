@@ -42,3 +42,7 @@ Testing can be setup using a CI tool like Circle CI and Automated Browser Testin
 
 --- configuration screen
 /admin/config/customfeeds-settings
+
+### Still to do ###
+to ignore /*vendors on gitignore
+tie up event distribution pubsub via a cache relay service.
